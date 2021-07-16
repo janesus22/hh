@@ -6,9 +6,8 @@ services:
     image: docker-registry.theautomation.nl/coen/prd-jellyfin-app:latest
     container_name: prd-jellyfin-app
     restart: unless-stopped
-    user: 1000:1000
     network_mode: host
     volumes:
       - ./config:/config
       - ./cache:/cache
-      - /mnt/slow-storage/temp/downloads/movies:/media
+      - /mnt/slow-storage/temp/downloads/media:/media
