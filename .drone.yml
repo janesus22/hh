@@ -45,7 +45,7 @@ steps:
   - name: upgrade
     image: appleboy/drone-ssh
     settings:
-      host: docker.stam.lan
+      host: docker-host.lan
       username: coen
       password:
         from_secret: ssh_password
@@ -58,7 +58,7 @@ steps:
   - name: deploy
     image: appleboy/drone-ssh
     settings:
-      host: docker.stam.lan
+      host: docker-host.lan
       username: coen
       password:
         from_secret: ssh_password
@@ -70,7 +70,7 @@ steps:
   - name: clean
     image: appleboy/drone-ssh
     settings:
-      host: docker.stam.lan
+      host: docker-host.lan
       username: coen
       password:
         from_secret: ssh_password
@@ -99,7 +99,7 @@ steps:
         from_secret: nodered_endpoint_username
       password:
         from_secret: nodered_endpoint_password
-      urls: http://docker.stam.lan:1880/drone/notify
+      urls: http://docker-host.lan:1880/drone/notify
       skip_verify: true
       content_type: application/json
       template: |
