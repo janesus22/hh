@@ -9,4 +9,4 @@ services:
     volumes:
       - ./config:/config
       - ./cache:/cache
-      - /mnt/slow-storage/temp/downloads/media:/media
+      - /mnt/R10_S8TB_C120GB/temp/downloads/media:/media
