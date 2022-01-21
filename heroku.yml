@@ -1,3 +1,14 @@
+version: '3.8'
+services:
+  prd-jellyfin-app:
+    image: docker-registry.theautomation.nl/coen/prd-jellyfin-app:latest
+    container_name: prd-jellyfin-app
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - /mnt/R10_S8TB_C120GB/temp/downloads/media:/media
 build:
   docker:
     web: Dockerfile
